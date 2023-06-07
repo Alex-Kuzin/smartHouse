@@ -39,7 +39,8 @@ public class RadioTest {
     @Test
     public void StationNext() {
         Radio rd = new Radio();
-        rd.next(9);
+        rd.setCurrentStation(9);
+        rd.next();
 
         int expected = 0;
         int actual = rd.getCurrentStation();
@@ -50,7 +51,8 @@ public class RadioTest {
     @Test
     public void StationNext2() {
         Radio rd = new Radio();
-        rd.next(0);
+        rd.setCurrentStation(0);
+        rd.next();
 
         int expected = 1;
         int actual = rd.getCurrentStation();
@@ -61,7 +63,8 @@ public class RadioTest {
     @Test
     public void StationPrev() {
         Radio rd = new Radio();
-        rd.prev(0);
+        rd.setCurrentStation(0);
+        rd.prev();
 
         int expected = 9;
         int actual = rd.getCurrentStation();
@@ -72,7 +75,8 @@ public class RadioTest {
     @Test
     public void StationPrev2() {
         Radio rd = new Radio();
-        rd.prev(1);
+        rd.setCurrentStation(1);
+        rd.prev();
 
         int expected = 0;
         int actual = rd.getCurrentStation();
@@ -127,7 +131,8 @@ public class RadioTest {
     @Test
     public void addVol() {
         Radio rd = new Radio();
-        rd.addVolume(98);
+        rd.setCurrentVolume(98);
+        rd.addVolume();
 
         int expected = 99;
         int actual = rd.getCurrentVolume();
@@ -138,7 +143,8 @@ public class RadioTest {
     @Test
     public void addVol2() {
         Radio rd = new Radio();
-        rd.addVolume(100);
+        rd.setCurrentVolume(100);
+        rd.addVolume();
 
         int expected = 100;
         int actual = rd.getCurrentVolume();
@@ -149,7 +155,7 @@ public class RadioTest {
     @Test
     public void downVol() {
         Radio rd = new Radio();
-        rd.downVolume(0);
+        rd.downVolume();
 
         int expected = 0;
         int actual = rd.getCurrentVolume();
@@ -160,7 +166,8 @@ public class RadioTest {
     @Test
     public void downVol2() {
         Radio rd = new Radio();
-        rd.downVolume(10);
+        rd.setCurrentVolume(10);
+        rd.downVolume();
 
         int expected = 9;
         int actual = rd.getCurrentVolume();
